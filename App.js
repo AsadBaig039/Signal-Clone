@@ -7,6 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import HomeScreen from "./screens/HomeScreen";
 
 const Stack = createStackNavigator();
 // const globalScreenOptions = {
@@ -42,6 +43,21 @@ export default function App() {
           component={RegisterScreen}
           options={{
             title: "Register",
+            headerStyle: {
+              backgroundColor: "#2C6BED",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              marginLeft: 100,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: "Home",
             headerStyle: {
               backgroundColor: "#2C6BED",
             },
