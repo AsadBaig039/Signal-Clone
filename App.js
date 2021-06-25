@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
+import AddChatScreen from "./screens/AddChatScreen";
 
 const Stack = createStackNavigator();
 // const globalScreenOptions = {
@@ -22,7 +23,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Login"
           component={LoginScreen}
@@ -64,7 +65,22 @@ export default function App() {
             headerTintColor: "#fff",
             headerTitleStyle: {
               fontWeight: "bold",
-              marginLeft: 100,
+              alignSelf: "center",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="AddChat"
+          component={AddChatScreen}
+          options={{
+            title: "Add Chat",
+            headerStyle: {
+              backgroundColor: "#2C6BED",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              marginLeft: 80,
             },
           }}
         />
