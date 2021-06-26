@@ -11,7 +11,17 @@ function AddChatScreen({ navigation }) {
     });
   }, [navigation]);
 
-  const createChat = async () => {};
+  const createChat = async () => {
+    await db
+      .collection("chats")
+      .add({
+        chatName: input,
+      })
+      .then(() => {
+        navigation.goBack();
+      })
+      .catch((error) => alert(error));
+  };
 
   return (
     <View style={styles.container}>

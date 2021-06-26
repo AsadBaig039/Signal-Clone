@@ -9,6 +9,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
 import AddChatScreen from "./screens/AddChatScreen";
+import ChatScreen from "./screens/ChatScreen";
 
 const Stack = createStackNavigator();
 // const globalScreenOptions = {
@@ -81,6 +82,21 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: "bold",
               marginLeft: 80,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            title: "Chat",
+            headerStyle: {
+              backgroundColor: "#2C6BED",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              marginLeft: 100,
             },
           }}
         />
