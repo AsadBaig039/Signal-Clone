@@ -26,6 +26,7 @@ function AddChatScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Input
+        containerStyle={{ width: 350, alignSelf: "center", marginTop: 30 }}
         placeholder="Enter a chat name"
         value={input}
         onChangeText={(text) => setInput(text)}
@@ -33,7 +34,16 @@ function AddChatScreen({ navigation }) {
           <Icon name="wechat" type="antdesign" size={24} color="black" />
         }
       />
-      <Button onPress={createChat} title="Create new chat" />
+      <Button
+        disabled={!input}
+        onPress={createChat}
+        title="Create new chat"
+        containerStyle={{
+          width: 350,
+          alignSelf: "center",
+          marginTop: 10,
+        }}
+      />
     </View>
   );
 }

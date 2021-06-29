@@ -10,6 +10,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
 import AddChatScreen from "./screens/AddChatScreen";
 import ChatScreen from "./screens/ChatScreen";
+import { Permissions, Notifications } from "expo";
 
 const Stack = createStackNavigator();
 // const globalScreenOptions = {

@@ -3,13 +3,15 @@ import { View, StyleSheet, KeyboardAvoidingView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button, Input, Image, Text } from "react-native-elements";
 import { auth } from "../firebase";
+import ImagePicker from "../components/ImagePicker";
 function RegisterScreen({ navigation }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [imageUrl, setImageUrl] = useState(
-    "https://res.cloudinary.com/dzcdsqxkb/image/upload/v1624531640/asad_pqksmw.png"
-  );
+  const [imageUrl, setImageUrl] = useState("");
+  const [cloudinaryUri, setCloudinaryUri] = useState("");
+
+  console.log("Cloud Uri", cloudinaryUri);
 
   const register = () => {
     auth
@@ -18,7 +20,7 @@ function RegisterScreen({ navigation }) {
         authUser.user.updateProfile({
           displayName: name,
           photoURL:
-            imageUrl ||
+            cloudinaryUri ||
             "https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png",
         });
       })
@@ -38,6 +40,10 @@ function RegisterScreen({ navigation }) {
         Create a Signal account
       </Text>
       <View style={styles.inputContainer}>
+        <ImagePicker
+          cloudUri={(uri) => setCloudinaryUri(uri)}
+          onChangeImage={(uri) => setImageUrl(uri)}
+        />
         <Input
           placeholder="Full Name"
           type="text"
@@ -58,12 +64,6 @@ function RegisterScreen({ navigation }) {
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
-        <Input
-          placeholder="Profile Picture (optional)"
-          type="text"
-          value={imageUrl}
-          onChangeText={(text) => setImageUrl(text)}
-        />
       </View>
       <Button
         raised
@@ -78,10 +78,11 @@ function RegisterScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    //  justifyContent: "center",
     alignItems: "center",
     padding: 10,
     backgroundColor: "white",
+    marginTop: 30,
   },
   inputContainer: {
     width: 300,
