@@ -14,7 +14,6 @@ This repository contains the code for the signal chat app which is built using E
     <img src="./ui_screenshots/5.jpg" alt="Camera" width="300" height="500">
     <img src="./ui_screenshots/6.jpg" alt="Camera" width="300" height="500">
     <img src="./ui_screenshots/7.jpg" alt="Camera" width="300" height="500">
-    <img src="./ui_screenshots/8.jpg" alt="Camera" width="300" height="500">
 
 </a>
 </p>
