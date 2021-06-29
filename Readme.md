@@ -60,3 +60,4 @@ Project Link: [https://github.com/AsadBaig039/Signal-Clone.git](https://github.c
 - [Expo Icon Pack](https://docs.expo.io/guides/icons/)
 - [React Native Elements](https://reactnativeelements.com/docs)
 - [Firebase](https://firebase.google.com/)
+- [cloudinary](http://cloudinary.com/)
