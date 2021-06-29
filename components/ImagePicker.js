@@ -118,9 +118,13 @@ export default function ImageInput({ onChangeImage, cloudUri }) {
           width: 100,
           alignSelf: "center",
           marginVertical: 20,
+          borderWidth: 2,
+          borderColor: "#2C6BED",
         }}
       >
-        {!imageUri && <MaterialCommunityIcons name="camera" size={40} />}
+        {!imageUri && (
+          <MaterialCommunityIcons name="camera" size={40} color={"#2C6BED"} />
+        )}
         {imageUri && (
           <Image
             source={{ uri: imageUri }}

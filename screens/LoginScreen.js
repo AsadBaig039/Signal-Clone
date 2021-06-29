@@ -26,34 +26,42 @@ function LoginScreen({ navigation }) {
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <StatusBar style="light" />
-      <Image
-        source={{
-          uri: "http://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 80,
         }}
-        style={styles.signalLogo}
-      />
-      <View style={styles.inputContainer}>
-        <Input
-          placeholder="Email"
-          autoFocus
-          type="email"
-          onChangeText={(text) => setEmail(text)}
+      >
+        <StatusBar style="light" />
+        <Image
+          source={{
+            uri: "http://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
+          }}
+          style={styles.signalLogo}
         />
-        <Input
-          placeholder="Password"
-          secureTextEntry
-          type="password"
-          onChangeText={(text) => setPassword(text)}
+        <View style={styles.inputContainer}>
+          <Input
+            placeholder="Email"
+            autoFocus
+            type="email"
+            onChangeText={(text) => setEmail(text)}
+          />
+          <Input
+            placeholder="Password"
+            secureTextEntry
+            type="password"
+            onChangeText={(text) => setPassword(text)}
+          />
+        </View>
+        <Button containerStyle={styles.button} title="Login" onPress={signIn} />
+        <Button
+          containerStyle={styles.button}
+          title="Register"
+          type="outline"
+          onPress={() => navigation.navigate("Register")}
         />
       </View>
-      <Button containerStyle={styles.button} title="Login" onPress={signIn} />
-      <Button
-        containerStyle={styles.button}
-        title="Register"
-        type="outline"
-        onPress={() => navigation.navigate("Register")}
-      />
     </KeyboardAvoidingView>
   );
 }
@@ -61,7 +69,7 @@ function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    //justifyContent: "center",
     alignItems: "center",
     padding: 10,
     backgroundColor: "white",
