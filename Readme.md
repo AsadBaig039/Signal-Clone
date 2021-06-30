@@ -30,6 +30,8 @@ This repository contains the code for the signal chat app which is built using E
    npm install
    ```
 
+3. Enter Firebase Configuration in firebase.js file
+
 ### Run Application
 
 1. Install expo app on your physical device (on Emulator expo app will be installed automatically)
